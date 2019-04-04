@@ -139,12 +139,12 @@ describe('Toast', () => {
     const component = mount(<Toast {...REQUIRED_PROPS}>FooBar</Toast>);
     expect(component.state('isRunning')).toBe(true);
 
-    let ev = new Event('blur');
+    let ev = new Event('syntheticBlur');
     window.dispatchEvent(ev);
 
     expect(component.state('isRunning')).toBe(false);
 
-    ev = new Event('focus');
+    ev = new Event('syntheticFocus');
     window.dispatchEvent(ev);
 
     expect(component.state('isRunning')).toBe(true);

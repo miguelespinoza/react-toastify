@@ -136,13 +136,13 @@ class Toast extends Component {
   }
 
   bindFocusEvents() {
-    window.addEventListener('focus', this.playToast);
-    window.addEventListener('blur', this.pauseToast);
+    window.addEventListener('syntheticFocus', this.playToast);
+    window.addEventListener('syntheticBlur', this.pauseToast);
   }
 
   unbindFocusEvents() {
-    window.removeEventListener('focus', this.playToast);
-    window.removeEventListener('blur', this.pauseToast);
+    window.removeEventListener('syntheticFocus', this.playToast);
+    window.removeEventListener('syntheticBlur', this.pauseToast);
   }
 
   bindDragEvents() {

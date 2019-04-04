@@ -24,6 +24,7 @@
     "index.d.ts"
   ],
   "scripts": {
+    "prepare": "npm run clean && cross-env NODE_ENV=production rollup -c && npm run style",
     "start": "npm run sass && webpack-dev-server --config ./webpack.config.dev.js",
     "test": "jest",
     "test:coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
