@@ -162,13 +162,13 @@ class Toast extends Component {
   }
 
   pauseToast = () => {
-    if (this.props.autoClose) {
+    if (this.props.autoClose && this.state.isRunning) {
       this.setState({ isRunning: false });
     }
   };
 
   playToast = () => {
-    if (this.props.autoClose) {
+    if (this.props.autoClose && !this.state.isRunning) {
       this.setState({ isRunning: true });
     }
   };
@@ -302,8 +302,8 @@ class Toast extends Component {
     };
 
     if (autoClose && pauseOnHover) {
-      toastProps.onMouseEnter = this.pauseToast;
-      toastProps.onMouseLeave = this.playToast;
+      toastProps.onMouseOver = this.pauseToast;
+      toastProps.onMouseOut = this.playToast;
     }
 
     // prevent toast from closing when user drags the toast
