@@ -180,7 +180,7 @@ class Toast extends Component {
 
     this.ref.style.transition = '';
 
-    this.drag.start = this.drag.x = getX(e.nativeEvent);
+    this.drag.start = this.drag.x = getX(e);
     this.drag.removalDistance =
       this.ref.offsetWidth * (this.props.draggablePercent / 100);
   };
